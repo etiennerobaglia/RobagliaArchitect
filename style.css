@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.1;
+}
+.categories {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.category:not(:first-of-type) {
+  margin: 1.5rem 0;
+}
+.projet-image, .category {
+  max-height: 150px;
+}
+.category {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  max-width: 100vw;
+}
+.category .category-title {
+  font-size: 0.9rem;
+  font-weight: 300;
+  min-width: 280px;
+  text-align: end;
+  margin-right: 30px;
+}
+.category .projet-image {
+  margin-right: 2rem;
+  object-fit: cover;
+}
+.projet-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.projet-content .projet-photo-grande {
+  width: 100%;
+  object-fit: cover;
+}
+.projet-content .projet-article {
+  margin: 2rem 0;
+  display: flex;
+}
+.projet-content .projet-article .projet-text {
+  flex: 8 1;
+}
+.projet-content .projet-article .projet-titre {
+  margin-bottom: 0.75rem;
+  text-align: justify;
+}
+.projet-content .projet-article .projet-description {
+  order: 1;
+}
+.projet-content .projet-article .description-technique {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  text-align: justify;
+}
+.projet-content .projet-article .description-architecural {
+  text-align: justify;
+}
+.projet-content .projet-article .projet-side-text {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  order: -1;
+  margin-right: 1rem;
+  flex: 1 1;
+}
+.projet-content .projet-article .projet-side-text .projet-label-prix {
+  margin-top: 1.5rem;
+  color: #02a302;
+  font-weight: 500;
+}
+.projet-content .projet-article .projet-side-text .projet-periode {
+  font-style: italic;
+}
+.projet-content .projet-photo-gallerie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3.5rem 0;
+}
+.projet-content .projet-photo-petite {
+  max-width: 30%;
+}
+.header-logo {
+  position: relative;
+  left: 160px;
+  width: 350px;
+}
+.header-logo-centered {
+  left: -33px;
+  display: block;
+}
+.header-centered {
+  width: 900px;
+  margin: 0 auto;
+}
+.footer-contact {
+  margin: 1rem 0 2.5rem;
+  display: flex;
+  font-size: 0.9rem;
+}
+.footer-centered {
+  justify-content: center;
+}
+.footer-centered .footer-left {
+  width: auto;
+}
+.footer-left {
+  text-align: right;
+  color: grey;
+  margin-right: 10px;
+  width: 300px;
+}
+.footer-left a {
+  color: grey;
+  text-decoration: none;
+}
+.footer-right {
+  text-align: left;
+  color: black;
+}
+.footer-right a {
+  color: black;
+  text-decoration: none;
+}

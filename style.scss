@@ -13,46 +13,57 @@ body {
 
 // -------------- VAR --------------
 
-$desktop-content-width: 900px;
+$desktop-content-width: 950px;
 
 
 // -------------- INDEX --------------
 
 .categories {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    max-width: $desktop-content-width;
+    margin: 0 auto;
 }
 
-.category:not(:first-of-type) {
-    margin: 1.5rem 0;
-}
-
-
-.projet-image,
-.category {
-    max-height: 150px;
-}
 
 .category {
-    height: 150px;
-    display: flex;
-    align-items: center;
-    max-width: 100vw;
+    margin-bottom: 2rem;
     
     .category-title {
-        font-size: .9rem;
-        font-weight: 300;
-        min-width: 280px;
-        text-align: end;
-        margin-right: 30px;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 1.75rem;
+    }
+
+    .category-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .category-link {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-decoration: none;
+        flex: 1 1 calc( 100% / 3 );
+        max-width: 31%;
+        margin-bottom: 2rem;;
     }
     
-    .projet-image {
-        margin-right: 2rem;
+    .category-link-image {
         object-fit: cover;
+        max-height: 175px;
+        width: 100%;
     }
+    
+    .category-link-name {
+        margin-top: 1rem;
+        font-size: .9rem;
+        color: black;
+        word-wrap: break-word;
+        text-align: justify;
+        // text-transform: lowercase;
+    }
+
+
 }
 
 // -------------- SINGLE --------------
@@ -122,6 +133,10 @@ $desktop-content-width: 900px;
 
     .projet-photo-petite {
         max-width: 30%;
+        display: block;
+        img {
+            max-width: 100%;
+        }
     }
 }
 
@@ -136,19 +151,21 @@ $desktop-content-width: 900px;
 }
 
 .header-logo-centered {
-    left: -33px;
+    left: -150px;
     display: block;
+    margin: .33rem 0 0rem;
 }
 
 .header-centered {
+    border-bottom: 2px solid rgb(34, 34, 34);
     width: $desktop-content-width;
-    margin: 0 auto;
+    margin: 0 auto 3.5rem;
 }
 
 // -------------- FOOTER --------------
 
 .footer-contact {
-    margin: 1rem 0 2.5rem;
+    margin: 7rem 0 2rem;
     display: flex;
     font-size: .9rem;
 }
@@ -164,7 +181,7 @@ $desktop-content-width: 900px;
     text-align: right;
     color: grey;
     margin-right: 10px;
-    width: 300px;
+    width: 500px;
     a {
         color: grey;
         text-decoration: none;

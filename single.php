@@ -21,10 +21,12 @@
         $petite_photo_2 = get_post_meta( get_the_ID(), "petite_photo_2", true );
         $petite_photo_3 = get_post_meta( get_the_ID(), "petite_photo_3", true );
     ?>
-
-    <img class="projet-photo-grande photo-grande-1" src="<?php echo $grande_photo_1["guid"] ?>">
-    <!-- <img class="projet-photo-grande photo-grande-2" src="<?php echo $grande_photo_2["guid"] ?>"> -->
-
+    <a href="<?php echo $grande_photo_1["guid"] ?>">
+        <img class="projet-photo-grande photo-grande-1" src="<?php echo $grande_photo_1["guid"] ?>">
+    </a>
+    <!-- <a href="<?php echo $grande_photo_2["guid"] ?>">
+        <img class="projet-photo-grande photo-grande-2" src="<?php echo $grande_photo_2["guid"] ?>">
+    </a> -->
 
     <section class="projet-article">
         <div class="projet-text">
@@ -53,9 +55,15 @@
 
 
     <section class="projet-photo-gallerie">
-        <img class="projet-photo-petite photo-petite-1" src="<?php echo $petite_photo_1["guid"] ?>">
-        <img class="projet-photo-petite photo-petite-3" src="<?php echo $petite_photo_3["guid"] ?>">
-        <img class="projet-photo-petite photo-petite-2" src="<?php echo $petite_photo_2["guid"] ?>">
+        <a class="projet-photo-petite photo-petite-1" href="<?php echo $petite_photo_1["guid"] ?>">
+            <img  src="<?php echo $petite_photo_1["guid"] ?>">
+        </a>
+        <a class="projet-photo-petite photo-petite-3" href="<?php echo $petite_photo_3["guid"] ?>">
+        <img src="<?php echo $petite_photo_3["guid"] ?>">
+        </a>
+        <a class="projet-photo-petite photo-petite-2" href="<?php echo $petite_photo_2["guid"] ?>">
+            <img  src="<?php echo $petite_photo_2["guid"] ?>">
+        </a>
     </section>
 
 

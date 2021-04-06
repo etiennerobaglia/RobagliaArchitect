@@ -7,10 +7,10 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header <?php if($args == "single") {echo 'class="header-centered"';} ?>>
+<header class="header-centered">
   <a href="<?php echo get_home_url() ?>">
     <img
-      class="header-logo<?php if($args == "single") {echo " header-logo-centered";} ?>"
+      class="header-logo header-logo-centered"
       src="<?php echo get_theme_file_uri( '/assets/images/logo.svg' ); ?>">
     </img>
   </a>

@@ -13,7 +13,7 @@ body {
 
 // -------------- VAR --------------
 
-$desktop-content-width: 950px;
+$desktop-content-width: 1000px;
 
 
 // -------------- INDEX --------------
@@ -28,8 +28,8 @@ $desktop-content-width: 950px;
     margin-bottom: 2rem;
     
     .category-title {
-        font-size: 1.3rem;
-        font-weight: 600;
+        font-size: 1.4rem;
+        font-weight: 500;
         margin-bottom: 1.75rem;
     }
 
@@ -56,10 +56,9 @@ $desktop-content-width: 950px;
     
     .category-link-name {
         margin-top: 1rem;
-        font-size: .9rem;
+        font-size: .8rem;
         color: black;
         word-wrap: break-word;
-        text-align: justify;
         // text-transform: lowercase;
     }
 
@@ -91,6 +90,7 @@ $desktop-content-width: 950px;
 
         .projet-description {
             order: 1;
+            line-height: 1.35;
         }
 
         .description-technique {
@@ -157,8 +157,8 @@ $desktop-content-width: 950px;
 }
 
 .header-centered {
-    border-bottom: 2px solid rgb(34, 34, 34);
-    width: $desktop-content-width;
+    border-bottom: 1px solid rgb(77, 77, 77);
+    max-width: $desktop-content-width;
     margin: 0 auto 3.5rem;
 }
 
@@ -196,3 +196,77 @@ $desktop-content-width: 950px;
         text-decoration: none;
     }
 }
+
+@media screen and (max-width: 1250px) {
+
+    .header-logo-centered {
+        left: -33px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+
+    body {
+        margin: 0 2vw;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .header-logo-centered {
+        width: 250px;
+        left: -24px;
+    }
+    .footer-contact {
+        font-size: .7rem;
+    }
+
+    .category {
+        .category-title {
+            font-size: 1rem;
+        }
+        .category-link-name {
+        font-size: .65rem;
+        }
+        .category-link {
+            max-width: 47vw;
+            flex: 1 1 calc(100% / 2);
+        }
+    }
+
+    .projet-content {
+        
+        .projet-article {
+        
+    
+            .projet-titre {
+                font-size: 1.2rem;
+            } 
+
+    
+            .projet-description{
+                font-size: .8rem;
+            }
+            
+            
+            .projet-side-text {
+                font-size: .7rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+
+    .category {
+        .category-title {
+            font-size: 1rem;
+        }
+        .category-link-name {
+        font-size: .6rem;
+        }
+    }
+}
+
+

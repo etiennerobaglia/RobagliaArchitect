@@ -12,6 +12,5 @@
     <img
       class="header-logo header-logo-centered"
       src="<?php echo get_theme_file_uri( '/assets/images/logo.svg' ); ?>">
-    </img>
   </a>
 </header>

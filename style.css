@@ -8,15 +8,15 @@ body {
   line-height: 1.1;
 }
 .categories {
-  max-width: 950px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 .category {
   margin-bottom: 2rem;
 }
 .category .category-title {
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 500;
   margin-bottom: 1.75rem;
 }
 .category .category-links {
@@ -40,13 +40,12 @@ body {
 }
 .category .category-link-name {
   margin-top: 1rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: black;
   word-wrap: break-word;
-  text-align: justify;
 }
 .projet-content {
-  max-width: 950px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 .projet-content .projet-photo-grande {
@@ -66,6 +65,7 @@ body {
 }
 .projet-content .projet-article .projet-description {
   order: 1;
+  line-height: 1.35;
 }
 .projet-content .projet-article .description-technique {
   font-weight: 600;
@@ -115,8 +115,8 @@ body {
   margin: 0.33rem 0 0rem;
 }
 .header-centered {
-  border-bottom: 2px solid #222;
-  width: 950px;
+  border-bottom: 1px solid #4d4d4d;
+  max-width: 1000px;
   margin: 0 auto 3.5rem;
 }
 .footer-contact {
@@ -147,4 +147,50 @@ body {
 .footer-right a {
   color: black;
   text-decoration: none;
+}
+@media screen and (max-width: 1250px) {
+  .header-logo-centered {
+    left: -33px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  body {
+    margin: 0 2vw;
+  }
+}
+@media screen and (max-width: 650px) {
+  .header-logo-centered {
+    width: 250px;
+    left: -24px;
+  }
+  .footer-contact {
+    font-size: 0.7rem;
+  }
+  .category .category-title {
+    font-size: 1rem;
+  }
+  .category .category-link-name {
+    font-size: 0.65rem;
+  }
+  .category .category-link {
+    max-width: 47vw;
+    flex: 1 1 calc(100% / 2);
+  }
+  .projet-content .projet-article .projet-titre {
+    font-size: 1.2rem;
+  }
+  .projet-content .projet-article .projet-description {
+    font-size: 0.8rem;
+  }
+  .projet-content .projet-article .projet-side-text {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .category .category-title {
+    font-size: 1rem;
+  }
+  .category .category-link-name {
+    font-size: 0.6rem;
+  }
 }

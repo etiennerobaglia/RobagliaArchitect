@@ -1,10 +1,4 @@
 <?php 
-    get_header(null, "single");
-?>
-
-<main class="projet-content">
-
-    <?php 
         if ( have_posts() ) : while ( have_posts() ) : the_post();
 
         $nom_court = get_post_meta( get_the_ID(), "nom_court", true );
@@ -20,13 +14,29 @@
         $petite_photo_1 = get_post_meta( get_the_ID(), "petite_photo_1", true );
         $petite_photo_2 = get_post_meta( get_the_ID(), "petite_photo_2", true );
         $petite_photo_3 = get_post_meta( get_the_ID(), "petite_photo_3", true );
-    ?>
+
+    get_header(null, $nom_court);
+?>
+
+<main class="projet-content">
+
     <a href="<?php echo $grande_photo_1["guid"] ?>">
         <img class="projet-photo-grande photo-grande-1" src="<?php echo $grande_photo_1["guid"] ?>">
     </a>
     <!-- <a href="<?php echo $grande_photo_2["guid"] ?>">
         <img class="projet-photo-grande photo-grande-2" src="<?php echo $grande_photo_2["guid"] ?>">
     </a> -->
+    <section class="projet-photo-gallerie">
+        <a class="projet-photo-petite photo-petite-1" href="<?php echo $petite_photo_1["guid"] ?>">
+            <img  src="<?php echo $petite_photo_1["guid"] ?>">
+        </a>
+        <a class="projet-photo-petite photo-petite-3" href="<?php echo $petite_photo_3["guid"] ?>">
+        <img src="<?php echo $petite_photo_3["guid"] ?>">
+        </a>
+        <a class="projet-photo-petite photo-petite-2" href="<?php echo $petite_photo_2["guid"] ?>">
+            <img  src="<?php echo $petite_photo_2["guid"] ?>">
+        </a>
+    </section>
 
     <section class="projet-article">
         <div class="projet-text">
@@ -52,21 +62,6 @@
         </div>
             
     </section>
-
-
-    <section class="projet-photo-gallerie">
-        <a class="projet-photo-petite photo-petite-1" href="<?php echo $petite_photo_1["guid"] ?>">
-            <img  src="<?php echo $petite_photo_1["guid"] ?>">
-        </a>
-        <a class="projet-photo-petite photo-petite-3" href="<?php echo $petite_photo_3["guid"] ?>">
-        <img src="<?php echo $petite_photo_3["guid"] ?>">
-        </a>
-        <a class="projet-photo-petite photo-petite-2" href="<?php echo $petite_photo_2["guid"] ?>">
-            <img  src="<?php echo $petite_photo_2["guid"] ?>">
-        </a>
-    </section>
-
-
     <?php endwhile; endif; ?>
 
 </main>

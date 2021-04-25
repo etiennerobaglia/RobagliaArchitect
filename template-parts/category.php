@@ -28,16 +28,15 @@
                 if(strpos($availableCategories, $args) !== false){
                     ?>
 
-                        <a class="category-link"  href="<?php echo $link; ?>">
-                            <img
-                                class="category-link-image"
-                                alt="<?php echo $nom_court ?>" 
-                                title="<?php echo $nom_court ?>" 
-                                src=" <?php echo $miniature["guid"] ?>"
-                            >
-                            
-                            <span class="category-link-name"><?php echo ucfirst(strtolower($nom_complet)) ?></span>
-                        </a>
+        <a class="category-link"  href="<?php echo $link; ?>">
+            <img
+                class="category-link-image"
+                alt="<?php echo $nom_court ?>" 
+                title="<?php echo $nom_court ?>" 
+                src=" <?php echo $miniature["guid"] ?>"
+            >
+            <span class="category-link-name"><?php echo ucfirst(strtolower($nom_complet)) ?></span>
+        </a>
             <?php
                     }
                 }

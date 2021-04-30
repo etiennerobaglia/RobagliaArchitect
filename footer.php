@@ -1,6 +1,5 @@
     <?php wp_footer(); ?>
-    <footer>
-        <div class="footer-centered">
+    <footer class="footer-centered">
             <div class="footer-block">
                 <p class="footer-contact-left">
                 téléphone <br>
@@ -24,7 +23,6 @@
                     Revue de Presse
                 </a>
             </div>
-        </div>
     </footer>
     </body>
 </html>

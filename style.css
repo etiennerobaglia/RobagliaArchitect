@@ -7,9 +7,13 @@ body {
   font-family: sans-serif;
   line-height: 1.1;
 }
+main {
+  margin-top: 200px;
+}
 .categories {
   max-width: 1000px;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 .category {
   margin-bottom: 2rem;
@@ -46,7 +50,8 @@ body {
 }
 .projet-content {
   max-width: 1000px;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 .projet-content .projet-photo-grande {
   width: 100%;
@@ -101,11 +106,25 @@ body {
   margin: 3.5rem 0;
 }
 .projet-content .projet-photo-petite {
-  max-width: 30%;
+  width: 30%;
   display: block;
 }
 .projet-content .projet-photo-petite img {
+  display: block;
+  margin: 0 auto;
   max-width: 100%;
+  max-height: 400px;
+}
+.header-centered {
+  border-bottom: 1px solid #4d4d4d;
+  max-width: 1000px;
+  margin: 0 auto 3.5rem;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  left: 0;
+  right: 0;
+  width: 100%;
 }
 .header-logo {
   position: relative;
@@ -116,11 +135,6 @@ body {
   left: -150px;
   display: block;
   margin: 0.33rem 0 0rem;
-}
-.header-centered {
-  border-bottom: 1px solid #4d4d4d;
-  max-width: 1000px;
-  margin: 0 auto 3.5rem;
 }
 .header-link {
   display: flex;
@@ -147,9 +161,12 @@ body {
   font-weight: 500;
 }
 .footer-centered {
+  background-color: white;
+  border-top: 1px solid #4d4d4d;
   display: flex;
   justify-content: space-between;
-  margin: 7rem auto 2rem;
+  padding: 2rem 0;
+  margin: 3rem auto 0;
   font-size: 0.9rem;
   max-width: 1000px;
 }
@@ -186,7 +203,7 @@ body {
 }
 @media screen and (max-width: 1250px) {
   .header-logo-centered {
-    left: -33px;
+    left: -15px;
   }
 }
 @media screen and (max-width: 1050px) {
@@ -196,8 +213,7 @@ body {
 }
 @media screen and (max-width: 650px) {
   .header-logo-centered {
-    width: 250px;
-    left: -24px;
+    width: 275px;
   }
   .footer-contact {
     font-size: 0.7rem;
@@ -223,7 +239,7 @@ body {
   }
   .header-return {
     height: 40px;
-    right: 0px;
+    right: 5px;
   }
   .header-return-icon {
     height: 17px;
@@ -234,7 +250,6 @@ body {
   }
   .footer-centered {
     flex-direction: column-reverse;
-    border-top: 1px solid #4d4d4d;
     padding-top: 1.5rem;
     font-size: 11.5px;
   }

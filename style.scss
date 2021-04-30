@@ -18,9 +18,15 @@ $desktop-content-width: 1000px;
 
 // -------------- INDEX --------------
 
+main {
+    margin-top: 200px;
+}
+// -------------- INDEX --------------
+
 .categories {
     max-width: $desktop-content-width;
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
@@ -69,7 +75,8 @@ $desktop-content-width: 1000px;
 
 .projet-content {
     max-width: $desktop-content-width;
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
 
 
     .projet-photo-grande {
@@ -137,10 +144,13 @@ $desktop-content-width: 1000px;
     }
 
     .projet-photo-petite {
-        max-width: 30%;
+        width: 30%;
         display: block;
         img {
+            display: block;
+            margin: 0 auto;
             max-width: 100%;
+            max-height: 400px;
         }
     }
 }
@@ -149,6 +159,18 @@ $desktop-content-width: 1000px;
 
 // -------------- HEADER --------------
 
+.header-centered {
+    border-bottom: 1px solid rgb(77, 77, 77);
+    max-width: $desktop-content-width;
+    margin: 0 auto 3.5rem;
+    position: fixed;
+    top: 0;
+    background-color: white;;
+    left: 0;
+    right: 0;
+    width: 100%;
+    // overflow: hidden;
+}
 .header-logo {
     position: relative;
     left: 160px;
@@ -161,11 +183,6 @@ $desktop-content-width: 1000px;
     margin: .33rem 0 0rem;
 }
 
-.header-centered {
-    border-bottom: 1px solid rgb(77, 77, 77);
-    max-width: $desktop-content-width;
-    margin: 0 auto 3.5rem;
-}
 
 .header-link {
     display: flex;
@@ -199,9 +216,12 @@ $desktop-content-width: 1000px;
 // -------------- FOOTER --------------
 
 .footer-centered {
+    background-color: white;
+    border-top: 1px solid rgb(77, 77, 77);
     display: flex;
     justify-content: space-between;
-    margin: 7rem auto 2rem;
+    padding: 2rem 0;
+    margin: 3rem auto 0;
     font-size: .9rem;
     max-width: $desktop-content-width;
     
@@ -247,7 +267,7 @@ $desktop-content-width: 1000px;
 @media screen and (max-width: 1250px) {
 
     .header-logo-centered {
-        left: -33px;
+        left: -15px;
     }
 }
 
@@ -261,8 +281,7 @@ $desktop-content-width: 1000px;
 @media screen and (max-width: 650px) {
 
     .header-logo-centered {
-        width: 250px;
-        left: -24px;
+        width: 275px;
     }
     .footer-contact {
         font-size: .7rem;
@@ -303,7 +322,7 @@ $desktop-content-width: 1000px;
     }
     .header-return {
         height: 40px;
-        right: 0px;
+        right: 5px;
     }
     
     .header-return-icon {
@@ -317,7 +336,6 @@ $desktop-content-width: 1000px;
     
     .footer-centered {
         flex-direction: column-reverse;
-        border-top: 1px solid rgb(77, 77, 77);
         padding-top: 1.5rem;
         font-size: 11.5px;
     }

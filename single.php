@@ -23,26 +23,12 @@
     <a href="<?php echo $grande_photo_1["guid"] ?>">
         <img class="projet-photo-grande photo-grande-1" src="<?php echo $grande_photo_1["guid"] ?>">
     </a>
-    <!-- <a href="<?php echo $grande_photo_2["guid"] ?>">
-        <img class="projet-photo-grande photo-grande-2" src="<?php echo $grande_photo_2["guid"] ?>">
-    </a> -->
-    <section class="projet-photo-gallerie">
-        <a class="projet-photo-petite photo-petite-1" href="<?php echo $petite_photo_1["guid"] ?>">
-            <img  src="<?php echo $petite_photo_1["guid"] ?>">
-        </a>
-        <a class="projet-photo-petite photo-petite-3" href="<?php echo $petite_photo_3["guid"] ?>">
-        <img src="<?php echo $petite_photo_3["guid"] ?>">
-        </a>
-        <a class="projet-photo-petite photo-petite-2" href="<?php echo $petite_photo_2["guid"] ?>">
-            <img  src="<?php echo $petite_photo_2["guid"] ?>">
-        </a>
-    </section>
-
+    
     <section class="projet-article">
         <div class="projet-text">
             <h1 class="projet-titre">
                 <?php echo $nom_complet ?>
-           </h1>
+            </h1>
             <div class="projet-description">
                 <div class="description-technique">
                     <?php echo $description_technique ?>
@@ -60,10 +46,24 @@
                 <?php echo $label_prix ?>
             </p>
         </div>
-            
+        
     </section>
+    <section class="projet-photo-gallerie">
+        <a class="projet-photo-petite photo-petite-1" href="<?php echo $petite_photo_1["guid"] ?>">
+            <img  src="<?php echo $petite_photo_1["guid"] ?>">
+        </a>
+        <a class="projet-photo-petite photo-petite-3" href="<?php echo $petite_photo_3["guid"] ?>">
+            <img src="<?php echo $petite_photo_3["guid"] ?>">
+        </a>
+        <a class="projet-photo-petite photo-petite-2" href="<?php echo $petite_photo_2["guid"] ?>">
+            <img  src="<?php echo $petite_photo_2["guid"] ?>">
+        </a>
+    </section>
+    <a href="<?php echo $grande_photo_2["guid"] ?>">
+        <img class="projet-photo-grande photo-grande-2" src="<?php echo $grande_photo_2["guid"] ?>">
+    </a>
     <?php endwhile; endif; ?>
-
+    
 </main>
 
 <?php 

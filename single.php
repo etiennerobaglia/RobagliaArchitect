@@ -19,7 +19,7 @@
             $nom_projet_court = get_post_meta( get_the_ID(), "nom_court", true );
             
             $img_src = get_post_meta( get_the_ID(), $img_cpt_name, true );
-            $img_full = $img_src["guid"];
+            $img_full = wp_get_attachment_image_src( $img_src["ID"], "full")[0];
             $img_alt = $nom_projet_court.'-'.$img_cpt_name;
             
             if ($class == "petite") {

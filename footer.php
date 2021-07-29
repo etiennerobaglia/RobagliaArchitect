@@ -1,6 +1,6 @@
     <?php wp_footer(); ?>
-    <footer class="footer-centered">
-            <div class="footer-block">
+    <!-- <footer class="footer-centered">
+            <div class="footer-block footer-block-left">
                 <p class="footer-contact-left">
                 téléphone <br>
                 <a href = "mailto:agence.architecte@robaglia.fr">
@@ -23,6 +23,6 @@
                     Revue de Presse
                 </a>
             </div>
-    </footer>
+    </footer> -->
     </body>
 </html>

@@ -1,6 +1,9 @@
 <section class="category">
-    <h2 class="category-title">
-        <?php echo ucfirst($args) ?>
+    <h2 class="category-title letter-spaced-large">
+        <span class="category-title-text">
+            <?php echo ucfirst($args) ?>
+        </span>
+        <span class="category-title-bar"></span>
     </h2>
     <div class="category-links">
     <?php
@@ -13,8 +16,10 @@
                 'cat' => 'home',
             );
             $loop = new WP_Query($projects);
+            $count=0;
             while ( $loop->have_posts() ) { 
                 $loop->the_post();
+                $lieu = get_post_meta( get_the_ID(), "lieu", true );
                 $nom_court = get_post_meta( get_the_ID(), "nom_court", true );
                 $nom_complet = get_post_meta( get_the_ID(), "nom_complet", true );
                 $link = get_permalink();
@@ -28,23 +33,28 @@
                 $miniature_sizes = wp_get_attachment_image_sizes( $miniature["ID"], 'large' );
 
 
-                foreach ($categories as &$categoryname) {
+                foreach ($categories as $key=>&$categoryname) {
                     $availableCategories .= $categoryname->name;
                 };
                 if(strpos($availableCategories, $args) !== false){
+                    $count++;
                     ?>
 
         <a class="category-link"  href="<?php echo $link; ?>">
-            <img
-                class="category-link-image"
-                alt="<?php echo $nom_court ?>" 
-                title="<?php echo $nom_court ?>" 
-
-                src="<?php echo $miniature_full ?>"
-                srcset="<?php echo $miniature_srcset ?>"
-                sizes="<?php echo $miniature_sizes ?>"
-            >
-            <span class="category-link-name"><?php echo ucfirst(strtolower($nom_complet)) ?></span>
+            <div class="category-link-image-container img-box-shadow">
+                <img
+                    class="category-link-image"
+                    alt="<?php echo $nom_court ?>" 
+    
+                    src="<?php echo $miniature_full ?>"
+                    srcset="<?php echo $miniature_srcset ?>"
+                    sizes="<?php echo $miniature_sizes ?>"
+                >
+            </div>
+            <div class="category-link-info">
+                <div class="category-link-name letter-spaced-small"><?php echo ucfirst($nom_complet) ?></div>
+                <div class="category-link-location letter-spaced-small"><?php echo ucfirst($lieu) ?></div>
+            </div>
         </a>
             <?php
                     }

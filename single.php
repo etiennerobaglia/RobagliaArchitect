@@ -1,6 +1,7 @@
 <?php 
         if ( have_posts() ) : while ( have_posts() ) : the_post();
 
+        $lieu = get_post_meta( get_the_ID(), "lieu", true );
         $nom_court = get_post_meta( get_the_ID(), "nom_court", true );
         $nom_complet = get_post_meta( get_the_ID(), "nom_complet", true );
         $description_technique = get_post_meta( get_the_ID(), "description_technique", true );
@@ -15,82 +16,76 @@
         // Array ( [0] => thumbnail [1] => medium [2] => medium_large [3] => large [4] => 1536x1536 [5] => 2048x2048 ) 
         
 
-        function linked_image($img_cpt_name, $class) {
+        function linked_image($img_cpt_name) {
             $nom_projet_court = get_post_meta( get_the_ID(), "nom_court", true );
-            
+
             $img_src = get_post_meta( get_the_ID(), $img_cpt_name, true );
             $img_full = wp_get_attachment_image_src( $img_src["ID"], "full")[0];
+            // $img_full = $img_src["guid"];
             $img_alt = $nom_projet_court.'-'.$img_cpt_name;
             
-            if ($class == "petite") {
-                $img_sizes = wp_get_attachment_image_sizes( $img_src["ID"], 'medium_large' );
-                $img_srcset = wp_get_attachment_image_srcset( $img_src["ID"], 'medium_large' );
-                echo '<a href="'.$img_full.'" class="'.esc_attr(str_replace('_', '-', $img_cpt_name)).' projet-photo-petite">
+
+            if($img_src) {
+                    $img_sizes = wp_get_attachment_image_sizes( $img_src["ID"], 'large' );
+                    $img_srcset = wp_get_attachment_image_srcset( $img_src["ID"], 'large' );
+                    echo 
+                    // '<a href="'.$img_full.'">
+                    '<div class="projet-photo-container img-box-shadow">
                         <img 
-                            src="'.esc_attr($img_full).'"
+                            class="'.esc_attr(str_replace('_', '-', $img_cpt_name)).' projet-photo-grande"
                             srcset="'.esc_attr($img_srcset).'"
                             sizes="'.esc_attr($img_sizes).'"
+                            src="'.esc_attr($img_full).'"
                             title="'.esc_attr($img_alt).'"
                         />
-                        </a>';
-            }
-            elseif ($class=="grande") {
-                $img_sizes = wp_get_attachment_image_sizes( $img_src["ID"], 'large' );
-                $img_srcset = wp_get_attachment_image_srcset( $img_src["ID"], 'large' );
-                echo '<a href="'.$img_full.'" >
-                <img 
-                    class="'.esc_attr(str_replace('_', '-', $img_cpt_name)).' projet-photo-grande"
-                    src="'.esc_attr($img_full).'"
-                    srcset="'.esc_attr($img_srcset).'"
-                    sizes="'.esc_attr($img_sizes).'"
-                    title="'.esc_attr($img_alt).'"
-                />
-                </a>';
+                    </div>';
+                    // </a>
             }
 
         }
         get_header(null, $nom_court);
     ?>
 
-<main class="projet-content">
-    
-
-    <?php  linked_image("grande_photo_1", "grande") ?>
-    
-    <section class="projet-article">
-        <div class="projet-text">
-            <h1 class="projet-titre">
-                <?php echo $nom_complet ?>
-            </h1>
-            <div class="projet-description">
-                <div class="description-technique">
-                    <?php echo $description_technique ?>
+<!-- <div class="projet-content-wrapper"> -->
+    <main class="projet-content">
+        <section class="projet-article">
+            <div class="projet-text">
+                <div class="projet-text-bar"></div>
+                <h1 class="projet-titre letter-spaced-large">
+                    <?php echo $nom_complet ?>
+                </h1>
+                <div class="projet-location letter-spaced-small">
+                    <?php echo ucfirst($lieu) ?>
                 </div>
-                <div class="description-architecural">
-                    <?php echo $description_architectural ?>
+                <div class="projet-side-text">
+                    <p class="projet-periode letter-spaced-small">
+                        <?php echo $periode ?>
+                    </p>
+                    <p class="projet-label-prix letter-spaced-small">
+                        <?php echo $label_prix ?>
+                    </p>
+                </div>
+                <div class="projet-description ">
+                    <div class="description-technique letter-spaced-small">
+                        <?php echo $description_technique ?>
+                    </div>
+                    <!-- <div class="description-architecural letter-spaced-small">
+                        <?php echo $description_architectural ?>
+                    </div> -->
                 </div>
             </div>
-        </div>
-        <div class="projet-side-text">
-            <p class="projet-periode">
-                <?php echo $periode ?>
-            </p>
-            <p class="projet-label-prix">
-                <?php echo $label_prix ?>
-            </p>
-        </div>
-        
-    </section>
-    <section class="projet-photo-gallerie">
-        <?php  linked_image("petite_photo_1", "petite") ?>
-        <?php  linked_image("petite_photo_2", "petite") ?>
-        <?php  linked_image("petite_photo_3", "petite") ?>
-    </section>
-    <?php  linked_image("grande_photo_2", "grande") ?>
-    <?php endwhile; endif; ?>
-    
-</main>
+        </section>
+        <section class="projet-photo-slider">
+            <?php  linked_image("photo_1") ?>
+            <?php  linked_image("photo_2") ?>
+            <?php  linked_image("photo_3") ?>
+            <?php  linked_image("photo_4") ?>
+            <?php  linked_image("photo_5") ?>
+        </section>
+    </main>
+<!-- </div> -->
 
+<?php endwhile; endif; ?>
 <?php 
 get_footer(null, "single");
 ?>

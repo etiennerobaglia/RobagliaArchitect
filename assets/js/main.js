@@ -1,6 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // var images = document.querySelectorAll(".category-link-image");
-    // console.log(images.length)
+    var hamMenu = document.querySelector(".header-hamburger");
+    var header = document.querySelector(".header");
+    
+    hamMenu.addEventListener("click", hamClicked => {
+      if (header.classList.contains("is-active")) {
+        header.classList.remove("is-active")
+      }
+      else {
+        header.classList.add("is-active")
+      }
+    })
 })
-
-

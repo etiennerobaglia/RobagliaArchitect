@@ -100,6 +100,7 @@ main {
 }
 .projet-content {
   display: flex;
+  justify-content: center;
   margin: 5rem 0;
 }
 .projet-content .projet-photo-container {
@@ -116,7 +117,7 @@ main {
 .projet-content .projet-article .projet-text-bar {
   width: 65%;
   border-top: 2px solid #9b9b9b;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.35rem;
 }
 .projet-content .projet-article .projet-text {
   position: sticky;
@@ -128,7 +129,7 @@ main {
 }
 .projet-content .projet-article .projet-location {
   color: #696969;
-  margin-bottom: 1rem;
+  margin-bottom: 0.45rem;
 }
 .projet-content .projet-article .projet-description {
   order: 1;
@@ -146,6 +147,7 @@ main {
 }
 .projet-content .projet-photo-slider {
   width: 100%;
+  max-width: 2000px;
   display: flex;
   flex-direction: column;
 }
@@ -165,7 +167,7 @@ main {
   max-width: 100%;
   max-height: 400px;
 }
-.header-centered {
+.header {
   background-color: white;
   display: flex;
   height: 111px;
@@ -174,8 +176,6 @@ main {
   position: relative;
   left: -150px;
   width: 350px;
-}
-.header-logo-centered {
   display: block;
 }
 .header-link {
@@ -206,65 +206,39 @@ main {
 .header-menu .header-menu-item:hover {
   border-bottom: 2px solid rgba(0, 0, 0, 0);
 }
-.header-return {
-  color: #1f1f1f;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.header-hamburger {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  top: 25px;
+  right: 25px;
+  height: 55px;
   align-items: center;
-  height: 50px;
-  right: 12.5px;
-  position: relative;
 }
-.header-return-icon {
-  height: 25px;
+.header-hamburger-cross {
+  display: none;
 }
-.header-return-text {
-  font-size: 12px;
-  font-weight: 500;
+.header.is-active .header-hamburger-cross {
+  display: block;
 }
-.footer-centered {
-  background-color: white;
-  border-top: 1px solid #4d4d4d;
+.header.is-active .header-hamburger-lines {
+  display: none;
+}
+.header.is-active .header-menu {
+  display: block;
+  position: absolute;
+  height: unset;
   display: flex;
-  justify-content: space-between;
-  padding: 2rem 0;
-  font-size: 0.9rem;
+  position: absolute;
+  top: 112px;
 }
-.footer-centered .footer-block {
-  display: flex;
+.header.is-active + main {
+  padding-top: 3rem;
 }
-.footer-centered .footer-block-left {
-  position: relative;
-  left: -124px;
-}
-.footer-centered .footer-block-col {
-  flex-direction: column;
-}
-.footer-centered .footer-block-col a {
-  color: black;
-  text-align: right;
-}
-.footer-centered .footer-contact-left {
-  width: auto;
-}
-.footer-contact-left {
-  text-align: right;
-  color: grey;
-  margin-right: 10px;
-  width: 500px;
-}
-.footer-contact-left a {
-  color: grey;
-  text-decoration: none;
-}
-.footer-contact-right {
-  text-align: left;
-  color: black;
-}
-.footer-contact-right a {
-  color: black;
-  text-decoration: none;
+@media screen and (min-width: 2000px) {
+  .category .category-link-image-container {
+    height: 37.5vh;
+  }
 }
 @media screen and (max-width: 1335px) {
   .projet-content .projet-article {
@@ -275,18 +249,18 @@ main {
   }
 }
 @media screen and (max-width: 1250px) {
-  .header-logo-centered {
-    left: -32px;
+  .header-logo {
+    left: -9.25%;
   }
   body {
-    margin: 0 2vw;
+    margin: 0 4%;
   }
   .category .category-links {
     grid-gap: 1.5rem;
   }
 }
 @media screen and (max-width: 1070px) {
-  .header-logo-centered {
+  .header-logo {
     width: 325px;
   }
   .category .category-links {
@@ -341,9 +315,23 @@ main {
     margin: 0.25rem;
   }
 }
+@media screen and (max-width: 750px) {
+  .header-menu {
+    display: none;
+    width: 92%;
+    justify-content: space-between;
+  }
+  .header-hamburger {
+    display: flex !important;
+    align-self: center !important;
+  }
+  .header-link {
+    pointer-events: none;
+  }
+}
 @media screen and (max-width: 650px) {
-  .header-logo-centered {
-    width: 275px;
+  .header-logo {
+    width: 300px;
   }
   .category .category-links {
     grid-gap: 1rem;
@@ -366,13 +354,6 @@ main {
   .header-menu .header-menu-item {
     font-size: 0.9rem;
   }
-  .header-menu {
-    display: none;
-  }
-  .header-hamburger {
-    display: flex !important;
-    align-self: center !important;
-  }
 }
 @media screen and (max-width: 550px) {
   .category .category-links {
@@ -382,14 +363,11 @@ main {
     height: 270px;
   }
   .category .category-link {
-    margin: 0 3.5%;
+    margin: 0 0.25rem;
   }
 }
 @media screen and (max-width: 350px) {
   .category .category-link-image-container {
     height: 240px;
-  }
-  .category .category-link {
-    margin: 0 2.6%;
   }
 }

@@ -50,13 +50,13 @@
     <main class="projet-content">
         <section class="projet-article">
             <div class="projet-text">
-                <div class="projet-text-bar"></div>
                 <h1 class="projet-titre letter-spaced-large">
                     <?php echo $nom_complet ?>
                 </h1>
                 <div class="projet-location letter-spaced-small">
                     <?php echo ucfirst($lieu) ?>
                 </div>
+                <div class="projet-text-bar"></div>
                 <div class="projet-side-text">
                     <p class="projet-periode letter-spaced-small">
                         <?php echo $periode ?>

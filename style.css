@@ -3,7 +3,6 @@
   margin: 0;
 }
 body {
-  margin: 0;
   font-family: sans-serif;
   line-height: 1.1;
   min-height: 100vh;
@@ -22,10 +21,10 @@ main {
   transition: all 0.2s ease;
 }
 .categories {
-  margin: 3rem 0 0;
+  margin: 5rem 0 0;
 }
 .category {
-  margin-bottom: 4rem;
+  margin-bottom: 7rem;
 }
 .category .category-title {
   margin-bottom: 3rem;
@@ -34,11 +33,10 @@ main {
   align-items: center;
 }
 .category .category-title ::first-letter {
-  font-size: 122%;
+  font-size: 115%;
 }
 .category .category-title-text {
-  font-size: 1.2rem;
-  color: #000;
+  font-size: 1.425rem;
 }
 .category .category-title-bar {
   border-bottom: 2px solid #9b9b9b;
@@ -66,7 +64,7 @@ main {
 }
 .category .category-link-image-container {
   overflow: hidden;
-  height: 305px;
+  height: 290px;
 }
 .category .category-link-image {
   width: 100%;
@@ -123,9 +121,20 @@ main {
   position: sticky;
   top: 6rem;
 }
-.projet-content .projet-article .projet-titre {
+.projet-content .projet-article .projet-titre-container {
+  display: flex;
+  justify-content: space-between;
+}
+.projet-content .projet-article .projet-titre-container .projet-titre {
   margin-bottom: 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1.35rem;
+}
+.projet-content .projet-article .projet-titre-container .arrow-right {
+  transition: all 0.3s ease;
+  transform: rotate(90deg);
+  height: 17.5px;
+  margin-left: 1rem;
+  display: none;
 }
 .projet-content .projet-article .projet-location {
   color: #696969;
@@ -166,6 +175,21 @@ main {
   margin: 0 auto;
   max-width: 100%;
   max-height: 400px;
+}
+.page-container {
+  margin: 3rem 0 0;
+  max-width: 1100px;
+}
+.page-container .page-titre {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-container .page-titre-bar {
+  border-bottom: 2px solid #9b9b9b;
+  margin-left: 2.5rem;
+  flex-grow: 1;
 }
 .header {
   background-color: white;
@@ -235,9 +259,21 @@ main {
 .header.is-active + main {
   padding-top: 3rem;
 }
-@media screen and (min-width: 2000px) {
+@media screen and (min-width: 1570px) {
+  body {
+    margin: 0 30px 0 14%;
+  }
   .category .category-link-image-container {
-    height: 37.5vh;
+    height: 305px;
+  }
+}
+@media screen and (min-width: 2000px) {
+  body {
+    margin: 0 auto 0 auto;
+    max-width: 1900px;
+  }
+  .category .category-link-image-container {
+    height: 375px;
   }
 }
 @media screen and (max-width: 1335px) {
@@ -256,7 +292,7 @@ main {
     margin: 0 4%;
   }
   .category .category-links {
-    grid-gap: 1.5rem;
+    grid-gap: 1.8rem;
   }
 }
 @media screen and (max-width: 1070px) {
@@ -265,10 +301,7 @@ main {
   }
   .category .category-links {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1.25rem;
-  }
-  .category .category-title-text {
-    font-size: 1.115rem;
+    grid-gap: 1.55rem;
   }
   .category .category-link-name, .category .category-link-location {
     font-size: 0.975rem;
@@ -276,8 +309,8 @@ main {
   .projet-text {
     font-size: 0.9rem;
   }
-  .projet-content .projet-article .projet-titre {
-    font-size: 1.02rem;
+  .projet-content .projet-article .projet-titre-container .projet-titre {
+    font-size: 1.2rem;
   }
   .header-menu .header-menu-item {
     font-size: 1.02rem;
@@ -293,6 +326,18 @@ main {
   .projet-content .projet-article .projet-text {
     position: unset;
     padding: 0 1rem 1rem;
+  }
+  .projet-content .projet-article .projet-titre-container {
+    cursor: pointer;
+  }
+  .projet-content .projet-article .projet-titre-container .arrow-right {
+    display: block;
+  }
+  .projet-content .projet-article .projet-text.is-active .projet-description {
+    display: block;
+  }
+  .projet-content .projet-article .projet-text.is-active .projet-titre-container .arrow-right {
+    transform: rotate(-90deg);
   }
   .projet-content .projet-article {
     width: 100%;
@@ -334,10 +379,10 @@ main {
     width: 300px;
   }
   .category .category-links {
-    grid-gap: 1rem;
+    grid-gap: 1.35rem;
   }
   .category .category-title-text {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   .category .category-link-image-container {
     height: 220px;
@@ -347,9 +392,6 @@ main {
   }
   .projet-text {
     font-size: 0.87rem;
-  }
-  .projet-content .projet-article .projet-titre {
-    font-size: 0.95rem;
   }
   .header-menu .header-menu-item {
     font-size: 0.9rem;

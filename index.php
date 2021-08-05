@@ -18,8 +18,6 @@
     get_template_part('template-parts/category',false, 'urbanisme, études de paysage');
     
     ?>
-
-
 </main>
 
 <?php 

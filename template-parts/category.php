@@ -28,7 +28,7 @@
                 
                 $miniature = get_post_meta( get_the_ID(), "miniature", true );
 
-                $miniature_full = wp_get_attachment_image_src( $miniature["ID"], 'large' );
+                $miniature_full = wp_get_attachment_image_src( $miniature["ID"], "large" )[0];
                 $miniature_srcset = wp_get_attachment_image_srcset( $miniature["ID"], 'large' );
                 $miniature_sizes = wp_get_attachment_image_sizes( $miniature["ID"], 'large' );
 
@@ -45,7 +45,9 @@
                 <img
                     class="category-link-image"
                     alt="<?php echo $nom_court ?>" 
-    
+                    loading="lazy"
+                    decoding="async"
+                    
                     src="<?php echo $miniature_full ?>"
                     srcset="<?php echo $miniature_srcset ?>"
                     sizes="<?php echo $miniature_sizes ?>"

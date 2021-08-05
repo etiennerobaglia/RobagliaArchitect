@@ -1,4 +1,4 @@
-// -------------- MIXINs --------------
+// -------------- VAR --------------
 $logo-grey: #696969;
 
 // -------------- NORMALIZE --------------
@@ -9,7 +9,6 @@ $logo-grey: #696969;
 }
 
 body {
-	margin: 0;
     font-family: sans-serif;
     line-height: 1.1;
     min-height: 100vh;
@@ -41,12 +40,12 @@ main {
 // -------------- INDEX --------------
 
 .categories {
-    margin: 3rem 0 0;
+    margin: 5rem 0 0;
 }
 
 
 .category {
-    margin-bottom: 4rem;
+    margin-bottom: 7rem;
     
     .category-title {
         margin-bottom: 3rem;
@@ -54,13 +53,12 @@ main {
         justify-content: center;
         align-items: center;
         ::first-letter {
-            font-size: 122%;
+            font-size: 115%;
         }
     }
 
     .category-title-text {
-        font-size: 1.2rem;
-        color: #000;
+        font-size: 1.425rem;
     }
 
     .category-title-bar {
@@ -97,7 +95,7 @@ main {
     
     .category-link-image-container {
         overflow: hidden;
-        height: 305px;
+        height: 290px;
     }
 
     .category-link-image {
@@ -151,10 +149,8 @@ main {
     }
     
     .projet-photo-grande {
-        // height: 100%;
         display: block;
         width: 100%;
-        // margin-bottom: 2rem;
     }
 
     .projet-article {
@@ -172,11 +168,23 @@ main {
             position: sticky;
             top: 6rem;
         }
+        .projet-titre-container {
+            display: flex;
+            justify-content: space-between;
 
-        .projet-titre {
-            margin-bottom: .5rem;
-            font-size: 1.1rem;
-        } 
+            .projet-titre {
+                margin-bottom: .5rem;
+                font-size: 1.35rem;
+            }
+            .arrow-right {
+                transition: all .3s ease;
+                transform: rotate(90deg);
+                height: 17.5px;
+                margin-left: 1rem;
+                display: none;
+            }
+
+        }
 
         .projet-location {
             color: $logo-grey;
@@ -191,7 +199,6 @@ main {
         .description-technique {
             font-weight: 500;
             line-height: 1.215;
-            // text-align: justify;
         }
 
         .description-architecural {
@@ -233,6 +240,25 @@ main {
             max-width: 100%;
             max-height: 400px;
         }
+    }
+}
+
+// -------------- PAGE --------------
+
+.page-container {
+    margin: 3rem 0 0;
+    max-width: 1100px;
+    .page-titre {
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .page-titre-bar {
+        border-bottom: 2px solid #9b9b9b;
+        margin-left: 2.5rem;
+        flex-grow: 1;
     }
 }
 
@@ -314,21 +340,33 @@ main {
 }
 
 .header.is-active + main {
-padding-top: 3rem
+    padding-top: 3rem
 }
 
 
-// --- responsive index images ---
-@media screen and (min-width: 2000px) {
-    .category {
-        .category-link-image-container {
-            height: 37.5vh;
-        }
-    }
-}
 
 // -------------- RESPONSIVE --------------
 
+// --- responsive index large screens ---
+@media screen and (min-width: 1570px) {
+    body {
+        margin: 0 30px 0 14%;
+    }
+    .category .category-link-image-container {
+        height: 305px;
+    }
+}
+
+// --- responsive index very large screens ---
+@media screen and (min-width: 2000px) {
+    body {
+        margin: 0 auto 0 auto;
+        max-width: 1900px;
+    }
+    .category .category-link-image-container {
+        height: 375px;
+    }
+}
 
 // --- reducing single side text ---
 @media screen and (max-width: 1335px) {
@@ -345,7 +383,6 @@ padding-top: 3rem
 
 // --- removing margin left alignment ---
 @media screen and (max-width: 1250px) {
-// @media screen and (max-width: 1315px) {
     
     .header-logo {
         left: -9.25%;
@@ -357,7 +394,7 @@ padding-top: 3rem
     
     .category {
         .category-links {
-            grid-gap: 1.5rem;
+            grid-gap: 1.8rem;
         }
     }
 }
@@ -373,10 +410,7 @@ padding-top: 3rem
     .category {
         .category-links {
             grid-template-columns: repeat(2, 1fr);
-            grid-gap: 1.25rem;
-        }
-        .category-title-text {
-            font-size: 1.115rem;
+            grid-gap: 1.55rem;
         }
         .category-link-name, .category-link-location {
             font-size: .975rem;
@@ -386,8 +420,8 @@ padding-top: 3rem
     .projet-text {
         font-size: .90rem;
     }
-    .projet-content .projet-article .projet-titre {
-        font-size: 1.02rem;
+    .projet-content .projet-article .projet-titre-container .projet-titre {
+        font-size: 1.2rem
     }
     
     .header-menu {
@@ -402,22 +436,48 @@ padding-top: 3rem
 @media screen and (max-width: 960px) {
     .projet-content {
         display: block;
+        
         .projet-article {
             margin-top: 0;
+
             .projet-text {
                 position: unset;
                 padding: 0 1rem 1rem;
+            }
+            .projet-titre-container {
+                cursor: pointer;
+            }
+
+            .projet-titre-container {
+                .arrow-right {
+                    display: block
+                }
+                
+            }
+
+            .projet-text.is-active {
+                .projet-description {
+                    display: block;
+                }
+                .projet-titre-container {
+                    .arrow-right {
+                        transform: rotate(-90deg);
+                    }
+                } 
             }
         }
         .projet-article{
             width: 100%;
         }
+
         .projet-photo-container {
             margin: 1rem;
         }
+
         .projet-description {
             display: none;
         }
+
     }
 }
 
@@ -472,10 +532,10 @@ padding-top: 3rem
 
     .category {
         .category-links {
-            grid-gap: 1rem;
+            grid-gap: 1.35rem;
         }
         .category-title-text {
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
         .category-link-image-container {
             height: 220px;
@@ -488,9 +548,7 @@ padding-top: 3rem
     .projet-text {
         font-size: .87rem;
     }
-    .projet-content .projet-article .projet-titre {
-        font-size: .95rem;
-    }
+
     
     .header-menu {
         .header-menu-item {

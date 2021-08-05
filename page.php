@@ -1,18 +1,14 @@
 <?php get_header(); ?>
 
-
-<main class="projet-content">
-    <section class="projet-article">
-        <div class="projet-text">
-            <h1 class="projet-titre">
-                <?php echo the_title(); ?>
-           </h1>
-            <div class="projet-description">
-                <div class="description-architectural">
-                    <?php echo the_content(); ?>
-                </div>
-            </div>
-		</div>
+<main class="page-container">
+    <h1 class="page-titre">
+        <span class="page-titre-text">
+            <?php echo the_title(); ?>
+        </span>
+        <span class="page-titre-bar"></span>
+    </h1>        
+    <section class="page-text">
+            <?php echo the_content(); ?>
     </section>
 </main>
 

@@ -6,16 +6,13 @@ body {
   font-family: sans-serif;
   line-height: 1.1;
   min-height: 100vh;
-  margin: 0 30px 0 11%;
+  margin: 0 2.75% 0 11%;
 }
 .letter-spaced-small {
   letter-spacing: 0.085rem;
 }
 .letter-spaced-large {
   letter-spacing: 0.11rem;
-}
-.img-box-shadow {
-  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.075);
 }
 main {
   transition: all 0.2s ease;
@@ -46,7 +43,7 @@ main {
 .category .category-links {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
+  grid-gap: 2.7vw;
 }
 .category .category-link {
   display: flex;
@@ -194,7 +191,7 @@ main {
 .header {
   background-color: white;
   display: flex;
-  height: 111px;
+  height: 120px;
 }
 .header-logo {
   position: relative;
@@ -220,15 +217,16 @@ main {
   color: black;
   text-decoration: none;
   padding-bottom: 0.1rem;
-  border-bottom: 2px solid #9b9b9b;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
   font-weight: 600;
   font-size: 1.1rem;
+  padding-bottom: 1.1rem;
 }
 .header-menu .header-menu-item::first-letter {
   font-size: 112%;
 }
 .header-menu .header-menu-item:hover {
-  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  border-bottom: 2px solid #9b9b9b;
 }
 .header-hamburger {
   display: none;
@@ -261,7 +259,7 @@ main {
 }
 @media screen and (min-width: 1570px) {
   body {
-    margin: 0 30px 0 14%;
+    margin: 0 2.75% 0 14.5%;
   }
   .category .category-link-image-container {
     height: 305px;
@@ -270,7 +268,7 @@ main {
 @media screen and (min-width: 2000px) {
   body {
     margin: 0 auto 0 auto;
-    max-width: 1900px;
+    max-width: 1800px;
   }
   .category .category-link-image-container {
     height: 375px;

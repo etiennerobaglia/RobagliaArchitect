@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * Load custom CSS and JavaScript.
  */
@@ -9,4 +7,3 @@ function wpdocs_my_enqueue_scripts() : void {
     wp_enqueue_script( 'main', get_template_directory_uri().'/assets/js/main.js');
 }
 ?>
-

@@ -1,0 +1,23 @@
+name: Deploy Theme
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Deploy to IONOS using SSH
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USER }}
+        password: ${{ secrets.PASSWORD }}
+        script: |
+          rsync -avz --delete ./* ${{ secrets.USER }}@${{ secrets.HOST }}:/robaglia.fr/wp-content/themes/RobagliaArchitect/

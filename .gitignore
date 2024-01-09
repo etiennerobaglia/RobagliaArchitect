@@ -1,0 +1,20 @@
+# Ignore common files
+*.log
+*.sql
+*.sqlite
+.DS_Store
+Thumbs.db
+
+# Ignore node modules
+/node_modules/
+
+# Ignore system files
+.sass-cache/
+.vscode/
+
+# Ignore cache and temporary files
+*.bak
+*.swp
+*~
+/cache/
+/tmp/

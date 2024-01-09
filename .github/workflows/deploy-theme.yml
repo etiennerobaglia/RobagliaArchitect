@@ -18,6 +18,9 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
-        key: ${{ secrets.PRIVATE_KEY }}
+        password: ${{ secrets.PASSWORD }}
         script: |
-          rsync -avz --delete ./* ${{ secrets.USER }}@${{ secrets.HOST }}:/robaglia.fr/wp-content/themes/RobagliaArchitect/
+          mkdir -p /robaglia.fr/wp-content/themes/RobagliaArchitect/
+          cd /robaglia.fr/wp-content/themes/RobagliaArchitect/
+          rm -rf *
+          git clone https://github.com/etiennerobaglia/RobagliaArchitect.git .

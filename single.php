@@ -17,34 +17,30 @@
         
 
         function linked_image($img_cpt_name) {
-            $nom_projet_court = get_post_meta( get_the_ID(), "nom_court", true );
-
-            $img_src = get_post_meta( get_the_ID(), $img_cpt_name, true );
-            $img_full = wp_get_attachment_image_src( $img_src["ID"], "full")[0];
-            // $img_full = $img_src["guid"];
-            $img_alt = $nom_projet_court.'-'.$img_cpt_name;
-            
-
-            if($img_src) {
-                    $img_sizes = wp_get_attachment_image_sizes( $img_src["ID"], 'large' );
-                    $img_srcset = wp_get_attachment_image_srcset( $img_src["ID"], 'large' );
-                    echo 
-                    // '<a href="'.$img_full.'">
-                    '<div class="projet-photo-container img-box-shadow">
-                        <img 
-                            class="'.esc_attr(str_replace('_', '-', $img_cpt_name)).' projet-photo-grande"
-                            srcset="'.esc_attr($img_srcset).'"
-                            loading="lazy"
-                            decoding="async"
-                            sizes="'.esc_attr($img_sizes).'"
-                            src="'.esc_attr($img_full).'"
-                            title="'.esc_attr($img_alt).'"
-                        />
-                    </div>';
-                    // </a>
-            }
-
-        }
+          $nom_projet_court = get_post_meta( get_the_ID(), "nom_court", true );
+      
+          $img_src = get_post_meta( get_the_ID(), $img_cpt_name, true );
+      
+          if(is_array($img_src) && isset($img_src["ID"])) {
+              $img_full = wp_get_attachment_image_src( $img_src["ID"], "full")[0];
+              $img_alt = $nom_projet_court.'-'.$img_cpt_name;
+      
+              $img_sizes = wp_get_attachment_image_sizes( $img_src["ID"], 'large' );
+              $img_srcset = wp_get_attachment_image_srcset( $img_src["ID"], 'large' );
+              echo 
+              '<div class="projet-photo-container img-box-shadow">
+                  <img 
+                      class="'.esc_attr(str_replace('_', '-', $img_cpt_name)).' projet-photo-grande"
+                      srcset="'.esc_attr($img_srcset).'"
+                      loading="lazy"
+                      decoding="async"
+                      sizes="'.esc_attr($img_sizes).'"
+                      src="'.esc_attr($img_full).'"
+                      title="'.esc_attr($img_alt).'"
+                  />
+              </div>';
+          }
+      }
         get_header(null, $nom_court);
     ?>
 

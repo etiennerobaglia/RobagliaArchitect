@@ -1,4 +1,4 @@
-name: Deploy Theme
+name: Deploy WordPress Theme
 
 on:
   push:
@@ -7,18 +7,19 @@ on:
 
 jobs:
   deploy:
+    name: Deploy Theme to WordPress Site
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Deploy to IONOS using SSH
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USER }}
-        password: ${{ secrets.PASSWORD }}
-        script: |
-          rm -rf /robaglia.fr/wp-content/themes/RobagliaArchitect
-          git clone https://github.com/etiennerobaglia/RobagliaArchitect.git /robaglia.fr/wp-content/themes/RobagliaArchitect
+      - name: Install SSH Client
+        run: sudo apt-get install sshpass
+
+      - name: Sync theme files
+        env:
+          HOST: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USER }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+        run: |
+          sshpass -p $PASSWORD rsync -avz -e 'ssh -p 22' --delete ./ $USERNAME@$HOST:/robaglia.fr/wp-content/themes/RobagliaArchitect

@@ -22,4 +22,4 @@ jobs:
           USERNAME: ${{ secrets.USER }}
           PASSWORD: ${{ secrets.PASSWORD }}
         run: |
-          sshpass -p $PASSWORD rsync -avz --delete -e 'ssh -p 22 -o StrictHostKeyChecking=no' ./ $USERNAME@$HOST:/robaglia.fr/wp-content/themes/RobagliaArchitect
+          sshpass -p $PASSWORD rsync -avz --delete -e 'ssh -p 22 -o StrictHostKeyChecking=no' ./ $USERNAME@$HOST:./robaglia.fr/wp-content/themes/RobagliaArchitect

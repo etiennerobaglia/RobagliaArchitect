@@ -20,6 +20,5 @@ jobs:
         username: ${{ secrets.USER }}
         password: ${{ secrets.PASSWORD }}
         script: |
-          rm -rf /robaglia.fr/wp-content/themes/RobagliaArchitect/*
-          cd /robaglia.fr/wp-content/themes/RobagliaArchitect/
-          git clone https://github.com/etiennerobaglia/RobagliaArchitect.git .
+          rm -rf /robaglia.fr/wp-content/themes/RobagliaArchitect
+          git clone https://github.com/etiennerobaglia/RobagliaArchitect.git /robaglia.fr/wp-content/themes/RobagliaArchitect
